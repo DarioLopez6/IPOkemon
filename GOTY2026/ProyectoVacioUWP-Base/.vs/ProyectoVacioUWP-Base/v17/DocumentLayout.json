@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\",
+  "WorkspaceRootPath": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\proyectovaciouwp-base\\combatepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\proyectovaciouwp-base\\combatepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|solutionrelative:proyectovaciouwp-base\\combatepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|c:\\users\\dario\\documents\\github\\ipokemon\\goty2026\\proyectovaciouwp-base\\proyectovaciouwp-base\\combatepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|solutionrelative:proyectovaciouwp-base\\combatepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\proyectovaciouwp-base\\combatepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|solutionrelative:proyectovaciouwp-base\\combatepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|c:\\users\\dario\\documents\\github\\ipokemon\\goty2026\\proyectovaciouwp-base\\proyectovaciouwp-base\\computerrordlm.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22712C46-E50E-4087-8EA2-F37398B06592}|ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base.csproj|solutionrelative:proyectovaciouwp-base\\computerrordlm.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +26,37 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ComputerrorDLM.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\ComputerrorDLM.xaml.cs",
+              "RelativeDocumentMoniker": "ProyectoVacioUWP-Base\\ComputerrorDLM.xaml.cs",
+              "ToolTip": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\ComputerrorDLM.xaml.cs",
+              "RelativeToolTip": "ProyectoVacioUWP-Base\\ComputerrorDLM.xaml.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAkwO4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T14:54:37.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CombatePage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml.cs",
               "RelativeDocumentMoniker": "ProyectoVacioUWP-Base\\CombatePage.xaml.cs",
-              "ToolTip": "C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml.cs",
+              "ToolTip": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml.cs",
               "RelativeToolTip": "ProyectoVacioUWP-Base\\CombatePage.xaml.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAUwGgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-27T11:35:28.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CombatePage.xaml",
-              "DocumentMoniker": "C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml",
+              "DocumentMoniker": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml",
               "RelativeDocumentMoniker": "ProyectoVacioUWP-Base\\CombatePage.xaml",
-              "ToolTip": "C:\\Users\\dario\\Downloads\\GOTY2026\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml",
+              "ToolTip": "C:\\Users\\dario\\Documents\\GitHub\\IPOkemon\\GOTY2026\\ProyectoVacioUWP-Base\\ProyectoVacioUWP-Base\\CombatePage.xaml",
               "RelativeToolTip": "ProyectoVacioUWP-Base\\CombatePage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-27T11:34:54.126Z",
