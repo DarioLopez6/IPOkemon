@@ -13,15 +13,23 @@ namespace ProyectoVacioUWP_Base
 {
     public sealed partial class CombatePage : Page
     {
-        // Diccionarios para control de tiempos y estados
+        // --- CONFIGURACIÓN ---
+        private const double REGEN_ENERGIA = 1.8;
+        private const int MS_BLOQUEO_ACCION = 1000;
+        private const int MS_BLOQUEO_DOLOR = 500;
+
         private Dictionary<VirtualKey, bool> cooldownsActivos = new Dictionary<VirtualKey, bool>();
         private Dictionary<VirtualKey, double> tiemposRestantes = new Dictionary<VirtualKey, double>();
-
         private DispatcherTimer gameLoop;
         private DispatcherTimer uiTimer;
 
         private bool p1Herido = false, p1Cansado = false, p2Herido = false, p2Cansado = false;
         private bool p1Protegido = false, p2Protegido = false;
+        private bool p1Ocupado = false, p2Ocupado = false;
+
+        // Registro para que las pociones sean de un solo uso
+        private bool p1PocionVidaUsada = false, p1PocionEnergiaUsada = false;
+        private bool p2PocionVidaUsada = false, p2PocionEnergiaUsada = false;
 
         public CombatePage()
         {
@@ -32,56 +40,41 @@ namespace ProyectoVacioUWP_Base
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
-            // Valores iniciales
             P1.Vida = 100; P1.Energia = 100;
             P2.Vida = 100; P2.Energia = 100;
-
-            InicializarCombate();
+            InicializarSistemas();
         }
 
-        private void InicializarCombate()
+        private void InicializarSistemas()
         {
-            VirtualKey[] claves = {
+            VirtualKey[] teclas = {
                 VirtualKey.W, VirtualKey.A, VirtualKey.S, VirtualKey.D,
                 VirtualKey.Up, VirtualKey.Left, VirtualKey.Down, VirtualKey.Right
             };
+            foreach (var t in teclas) { cooldownsActivos[t] = true; tiemposRestantes[t] = 0; }
 
-            foreach (var k in claves)
-            {
-                cooldownsActivos[k] = true;
-                tiemposRestantes[k] = 0;
-            }
-
-            // Bucle Lógica y Regeneración Rápida
-            gameLoop = new DispatcherTimer();
-            gameLoop.Interval = TimeSpan.FromMilliseconds(200);
+            gameLoop = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(200) };
             gameLoop.Tick += (s, e) => {
-                ValidarEstados(P1, ref p1Herido, ref p1Cansado);
-                ValidarEstados(P2, ref p2Herido, ref p2Cansado);
-
-                // Regeneración (aprox 7.5 puntos por segundo)
-                if (P1.Energia < 100) P1.Energia += 1.5;
-                if (P2.Energia < 100) P2.Energia += 1.5;
+                GestionarEstadoVisual(P1, ref p1Herido, ref p1Cansado, p1Ocupado);
+                GestionarEstadoVisual(P2, ref p2Herido, ref p2Cansado, p2Ocupado);
+                if (P1.Energia < 100) P1.Energia += REGEN_ENERGIA;
+                if (P2.Energia < 100) P2.Energia += REGEN_ENERGIA;
             };
             gameLoop.Start();
 
-            // Bucle UI para actualizar cronómetros de texto
-            uiTimer = new DispatcherTimer();
-            uiTimer.Interval = TimeSpan.FromMilliseconds(100);
-            uiTimer.Tick += (s, e) => ActualizarLabelsCooldown();
+            uiTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
+            uiTimer.Tick += (s, e) => ActualizarLabelsUI();
             uiTimer.Start();
         }
 
-        private void ValidarEstados(iPokemon p, ref bool h, ref bool c)
+        private void GestionarEstadoVisual(iPokemon p, ref bool h, ref bool c, bool ocupado)
         {
-            if (p.Vida <= 0) { p.animacionDerrota(); gameLoop.Stop(); uiTimer.Stop(); return; }
+            if (p.Vida <= 0) { p.animacionDerrota(); gameLoop.Stop(); return; }
+            if (ocupado) return;
 
-            // Umbral de Vida
             if (p.Vida < 50 && !h) { h = true; p.animacionHerido(); }
             else if (p.Vida >= 50 && h) { h = false; p.animacionNoHerido(); }
 
-            // Umbral de Energía
             if (p.Energia < 50 && !c) { c = true; p.animacionCansado(); }
             else if (p.Energia >= 50 && c) { c = false; p.animacionNoCansado(); }
         }
@@ -90,62 +83,137 @@ namespace ProyectoVacioUWP_Base
         {
             var k = e.VirtualKey;
 
-            // --- JUGADOR 1 ---
-            if (k == VirtualKey.W) IntentarAtaque(P1, P2, k, "flojo", 15, 0.8, txtW);
-            if (k == VirtualKey.A) IntentarAtaque(P1, P2, k, "fuerte", 40, 3.0, txtA);
-            if (k == VirtualKey.S) IntentarEscudo(P1, k, 15, 4.0, txtS);
-            if (k == VirtualKey.D) { if (cooldownsActivos[k]) { P1.Vida += 15; P1.Energia += 25; ((iPokemon)P1).animacionDescasar(); AplicarCD(k, 5.0, txtD); } }
-            if (k == VirtualKey.Q) ((iPokemon)P1).verPocionVida(false);
-            if (k == VirtualKey.E) ((iPokemon)P1).verPocionEnergia(false);
+            // JUGADOR 1
+            if (k == VirtualKey.W) ProcesarAccion(P1, P2, k, "flojo", 15, 0.8, txtW);
+            if (k == VirtualKey.A) ProcesarAccion(P1, P2, k, "fuerte", 40, 3.0, txtA);
+            if (k == VirtualKey.S) ProcesarAccion(P1, P2, k, "escudo", 15, 0, txtS); // CD manual por escudo
+            if (k == VirtualKey.D) ProcesarAccion(P1, P2, k, "relax", 0, 5.0, txtD);
+            if (k == VirtualKey.Q) UsarPocion(P1, "vida");
+            if (k == VirtualKey.E) UsarPocion(P1, "energia");
 
-            // --- JUGADOR 2 ---
-            if (k == VirtualKey.Up) IntentarAtaque(P2, P1, k, "flojo", 15, 0.8, txtUp);
-            if (k == VirtualKey.Left) IntentarAtaque(P2, P1, k, "fuerte", 40, 3.0, txtLeft);
-            if (k == VirtualKey.Down) IntentarEscudo(P2, k, 15, 4.0, txtDown);
-            if (k == VirtualKey.Right) { if (cooldownsActivos[k]) {  P2.Vida += 15; P2.Energia += 25; ((iPokemon)P2).animacionDescasar(); AplicarCD(k, 5.0, txtRight); } }
-            if (k == VirtualKey.O) ((iPokemon)P2).verPocionVida(false);
-            if (k == VirtualKey.P) ((iPokemon)P2).verPocionEnergia(false);
+            // JUGADOR 2
+            if (k == VirtualKey.Up) ProcesarAccion(P2, P1, k, "flojo", 15, 0.8, txtUp);
+            if (k == VirtualKey.Left) ProcesarAccion(P2, P1, k, "fuerte", 40, 3.0, txtLeft);
+            if (k == VirtualKey.Down) ProcesarAccion(P2, P1, k, "escudo", 15, 0, txtDown);
+            if (k == VirtualKey.Right) ProcesarAccion(P2, P1, k, "relax", 0, 5.0, txtRight);
+            if (k == VirtualKey.O) UsarPocion(P2, "vida");
+            if (k == VirtualKey.P) UsarPocion(P2, "energia");
         }
 
-        private void IntentarAtaque(iPokemon user, iPokemon target, VirtualKey k, string tipo, double coste, double cd, TextBlock txt)
+        private async void ProcesarAccion(iPokemon user, iPokemon target, VirtualKey k, string tipo, double coste, double cd, TextBlock txt)
         {
-            if (!cooldownsActivos[k]) return;
-
+            bool ocupado = (user == P1) ? p1Ocupado : p2Ocupado;
+            if (ocupado || !cooldownsActivos[k]) return;
             if (user.Energia < coste) { FeedbackError(txt); return; }
 
-            user.Energia -= coste;
-            if (tipo == "flojo") ((iPokemon)user).animacionAtaqueFlojo();
-            else ((iPokemon)user).animacionAtaqueFuerte();
+            // Si intenta poner escudo pero ya tiene uno, ignoramos
+            if (tipo == "escudo" && ((user == P1 && p1Protegido) || (user == P2 && p2Protegido))) return;
 
+            SetOcupado(user, true);
+            user.Energia -= coste;
+
+            switch (tipo)
+            {
+                case "flojo":
+                    user.animacionAtaqueFlojo();
+                    AplicarDano(user, target, 10);
+                    break;
+                case "fuerte":
+                    user.animacionAtaqueFuerte();
+                    AplicarDano(user, target, 25);
+                    break;
+                case "escudo":
+                    if (user == P1) p1Protegido = true; else p2Protegido = true;
+                    user.verEscudo(true);
+                    txt.Opacity = 0.4; // "Modo Cooldown" visual mientras el escudo esté activo
+                    cooldownsActivos[k] = false;
+                    break;
+                case "relax":
+                    user.Vida += 15; user.Energia += 25;
+                    user.animacionDescasar();
+                    break;
+            }
+
+            if (tipo != "escudo") IniciarCooldownIndividual(k, cd, txt);
+
+            await Task.Delay(MS_BLOQUEO_ACCION);
+            SetOcupado(user, false);
+        }
+
+        private async void AplicarDano(iPokemon user, iPokemon target, double cantidad)
+        {
             bool protegido = (target == P1) ? p1Protegido : p2Protegido;
             if (protegido)
             {
-                if (target == P1) p1Protegido = false; else p2Protegido = false;
+                // ELIMINAR ESCUDO AL RECIBIR DAÑO
+                if (target == P1)
+                {
+                    p1Protegido = false;
+                    txtS.Opacity = 1.0; // Vuelve a la normalidad
+                    cooldownsActivos[VirtualKey.S] = true;
+                }
+                else
+                {
+                    p2Protegido = false;
+                    txtDown.Opacity = 1.0; // Vuelve a la normalidad
+                    cooldownsActivos[VirtualKey.Down] = true;
+                }
                 target.verEscudo(false);
                 txtConsola.Text = "¡ESCUDO ROTO!";
             }
             else
             {
-                target.Vida -= (tipo == "flojo" ? 10 : 25);
+                bool estabaHeridoAntes = (target == P1) ? p1Herido : p2Herido;
+                target.Vida -= cantidad;
+                SetOcupado(target, true);
+                if (target.Vida < 50 && !estabaHeridoAntes)
+                {
+                    target.animacionHerido();
+                    if (target == P1) p1Herido = true; else p2Herido = true;
+                }
+                await Task.Delay(MS_BLOQUEO_DOLOR);
+                SetOcupado(target, false);
             }
-            AplicarCD(k, cd, txt);
         }
 
-        private void IntentarEscudo(iPokemon user, VirtualKey k, double coste, double cd, TextBlock txt)
+        private void UsarPocion(iPokemon p, string tipo)
         {
-            bool yaProtegido = (user == P1) ? p1Protegido : p2Protegido;
-            if (!cooldownsActivos[k] || yaProtegido) return;
-
-            if (user.Energia < coste) { FeedbackError(txt); return; }
-
-            user.Energia -= coste;
-            if (user == P1) p1Protegido = true; else p2Protegido = true;
-            user.verEscudo(true);
-            AplicarCD(k, cd, txt);
+            if (p == P1)
+            {
+                if (tipo == "vida" && !p1PocionVidaUsada)
+                {
+                    P1.Vida += 40; p1PocionVidaUsada = true;
+                    P1.verPocionVida(false); txtQ.Opacity = 0.2; // Apagado permanente
+                }
+                else if (tipo == "energia" && !p1PocionEnergiaUsada)
+                {
+                    P1.Energia += 50; p1PocionEnergiaUsada = true;
+                    P1.verPocionEnergia(false); txtE.Opacity = 0.2; // Apagado permanente
+                }
+            }
+            else
+            {
+                if (tipo == "vida" && !p2PocionVidaUsada)
+                {
+                    P2.Vida += 40; p2PocionVidaUsada = true;
+                    P2.verPocionVida(false); txtO.Opacity = 0.2;
+                }
+                else if (tipo == "energia" && !p2PocionEnergiaUsada)
+                {
+                    P2.Energia += 50; p2PocionEnergiaUsada = true;
+                    P2.verPocionEnergia(false); txtP.Opacity = 0.2;
+                }
+            }
         }
 
-        private async void AplicarCD(VirtualKey k, double seg, TextBlock txt)
+        private void SetOcupado(iPokemon p, bool estado)
         {
+            if (p == P1) p1Ocupado = estado; else p2Ocupado = estado;
+        }
+
+        private async void IniciarCooldownIndividual(VirtualKey k, double seg, TextBlock txt)
+        {
+            if (seg <= 0) return;
             cooldownsActivos[k] = false;
             tiemposRestantes[k] = seg;
             txt.Opacity = 0.4;
@@ -156,36 +224,32 @@ namespace ProyectoVacioUWP_Base
 
         private async void FeedbackError(TextBlock txt)
         {
-            var original = txt.Foreground;
+            var col = txt.Foreground;
             txt.Foreground = new SolidColorBrush(Colors.Red);
             await Task.Delay(250);
-            txt.Foreground = original;
+            txt.Foreground = col;
         }
 
-        private void ActualizarLabelsCooldown()
+        private void ActualizarLabelsUI()
         {
-            UpdateText(VirtualKey.W, txtW, "[W] FLOJO (15 EP)");
-            UpdateText(VirtualKey.A, txtA, "[A] FUERTE (40 EP)");
-            UpdateText(VirtualKey.S, txtS, "[S] ESCUDO (15 EP)");
-            UpdateText(VirtualKey.D, txtD, "[D] RELAX");
-            UpdateText(VirtualKey.Up, txtUp, "[↑] FLOJO (15 EP)");
-            UpdateText(VirtualKey.Left, txtLeft, "[←] FUERTE (40 EP)");
-            UpdateText(VirtualKey.Down, txtDown, "[↓] ESCUDO (15 EP)");
-            UpdateText(VirtualKey.Right, txtRight, "[→] RELAX");
+            ActualizarTexto(VirtualKey.W, txtW, "[W] FLOJO (15 EP)");
+            ActualizarTexto(VirtualKey.A, txtA, "[A] FUERTE (40 EP)");
+            ActualizarTexto(VirtualKey.S, txtS, "[S] ESCUDO (15 EP)");
+            ActualizarTexto(VirtualKey.D, txtD, "[D] RELAX");
+            ActualizarTexto(VirtualKey.Up, txtUp, "[↑] FLOJO (15 EP)");
+            ActualizarTexto(VirtualKey.Left, txtLeft, "[←] FUERTE (40 EP)");
+            ActualizarTexto(VirtualKey.Down, txtDown, "[↓] ESCUDO (15 EP)");
+            ActualizarTexto(VirtualKey.Right, txtRight, "[→] RELAX");
         }
 
-        private void UpdateText(VirtualKey k, TextBlock txt, string baseT)
+        private void ActualizarTexto(VirtualKey k, TextBlock txt, string baseT)
         {
             if (tiemposRestantes[k] > 0)
             {
                 tiemposRestantes[k] -= 0.1;
-                if (tiemposRestantes[k] < 0) tiemposRestantes[k] = 0;
-                txt.Text = $"{baseT} | {tiemposRestantes[k]:F1}s";
+                txt.Text = $"{baseT} | {Math.Max(0, tiemposRestantes[k]):F1}s";
             }
-            else
-            {
-                txt.Text = baseT;
-            }
+            else txt.Text = baseT;
         }
     }
 }

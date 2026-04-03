@@ -92,56 +92,56 @@ namespace ProyectoVacioUWP_Base
 
         // --- IMPLEMENTACIÓN DE LA INTERFAZ (Lo que llama MainPage) ---
 
-        public void animacionAtaqueFlojo()
+        void iPokemon.animacionAtaqueFlojo()
         {
             ReproducirSonido("aranazoFlojoDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniAranazoFlojo"]).Begin();
         }
 
-        public void animacionAtaqueFuerte()
+        void iPokemon.animacionAtaqueFuerte()
         {
             ReproducirSonido("rayoDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniRayoDeLuz"]).Begin();
         }
 
-        public void animacionDefensa()
+        void iPokemon.animacionDefensa()
         {
             ReproducirSonido("escudoDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniProteccion"]).Begin();
         }
 
-        public void animacionDescasar()
+        void iPokemon.animacionDescasar()
         {
             ReproducirSonido("curaDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniDescanso"]).Begin();
         }
 
-        public void animacionCansado()
+        void iPokemon.animacionCansado()
         {
             ReproducirSonido("apagadoDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniCanso"]).Begin();
         }
 
-        public void animacionHerido()
+        void iPokemon.animacionHerido()
         {
             ReproducirSonido("explosionDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniHerido"]).Begin();
         }
 
-        public void animacionNoHerido()
+        void iPokemon.animacionNoHerido()
         {
             ReproducirSonido("desexplosionDEFINITIVO.wav");
             ((Storyboard)this.Resources["AniDesHerido"]).Begin();
         }
 
-        public void animacionDerrota()
+        void iPokemon.animacionDerrota()
         {
             ReproducirSonido("muerteDEFINITIVA.wav");
             ((Storyboard)this.Resources["AniDerrotado"]).Begin();
             ((Storyboard)this.Resources["AniMeMataste"]).Begin();
         }
 
-        public void verEscudo(bool ver)
+        void iPokemon.verEscudo(bool ver)
         {
             if (ver)
             {
@@ -156,14 +156,14 @@ namespace ProyectoVacioUWP_Base
         }
 
         // Métodos de visibilidad y otros (Sin cambios)
-        public void verFondo(bool ver) { grid.Background = ver ? new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///AssetsComputerrorDLM/fondoPokemon.jpg")) } : null; }
-        public void verFilaVida(bool ver) { pbHealth.Visibility = ImCorazon.Visibility = imRedPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
-        public void verFilaEnergia(bool ver) { pbStamina.Visibility = ImEnergia.Visibility = imYellowPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
-        public void verPocionVida(bool ver) { imRedPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
-        public void verPocionEnergia(bool ver) { imYellowPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
-        public void verNombre(bool ver) { TextNombre.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
-        public void activarAniIdle(bool activar) { if (activar) sbIdle.Begin(); else sbIdle.Stop(); }
-        public void animacionNoCansado() { ((Storyboard)this.Resources["AniDescanso"]).Begin(); }
+        void iPokemon.verFondo(bool ver) { grid.Background = ver ? new ImageBrush { ImageSource = new BitmapImage(new Uri("ms-appx:///AssetsComputerrorDLM/fondoPokemon.jpg")) } : null; }
+        void iPokemon.verFilaVida(bool ver) { pbHealth.Visibility = ImCorazon.Visibility = imRedPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
+        void iPokemon.verFilaEnergia(bool ver) { pbStamina.Visibility = ImEnergia.Visibility = imYellowPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
+        void iPokemon.verPocionVida(bool ver) { imRedPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
+        void iPokemon.verPocionEnergia(bool ver) { imYellowPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
+        void iPokemon.verNombre(bool ver) { TextNombre.Visibility = ver ? Visibility.Visible : Visibility.Collapsed; }
+        void iPokemon.activarAniIdle(bool activar) { if (activar) sbIdle.Begin(); else sbIdle.Stop(); }
+        void iPokemon.animacionNoCansado() { ((Storyboard)this.Resources["AniDescanso"]).Begin(); }
 
         public void activarMusicaIdle(bool activar)
         {
