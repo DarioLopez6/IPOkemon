@@ -1,0 +1,111 @@
+💥 Sistema de Combate PvP
+
+Este proyecto presenta un sistema de combate inspirado en juegos de acción, alejándose del modelo clásico por turnos y apostando por una experiencia más dinámica y estratégica en tiempo real.
+
+Seleccion de personaje estilo videojuego
+<img width="516" height="316" alt="MHAJ_idea_IPOkemon" src="https://github.com/user-attachments/assets/b33f7196-2f90-4e4d-8bb9-c780dd0b8ef3" />
+
+
+⚔️ Concepto General
+
+El combate es PvP (Jugador contra Jugador) donde cada jugador selecciona un equipo de 3 Pokémon:
+
+🟢 1 Pokémon activo (el que combate en pantalla)
+🔵 2 Pokémon de apoyo (pueden intervenir o sustituir al activo)
+
+Durante la batalla, el jugador puede cambiar entre sus Pokémon y utilizar a los de apoyo en momentos clave.
+
+⏱️ Sistema en Tiempo Real
+
+A diferencia de los combates tradicionales:
+
+❌ No hay turnos
+✅ Todo ocurre en tiempo real
+
+Esto obliga al jugador a:
+
+Tomar decisiones rápidas
+Gestionar recursos constantemente
+Adaptarse al ritmo del combate
+🔋 Sistema de Energía
+
+Cada Pokémon dispone de una barra de energía que:
+
+Se regenera automáticamente con el tiempo
+Es necesaria para ejecutar ataques
+
+👉 No se pueden usar habilidades sin energía suficiente, lo que añade una capa estratégica importante.
+
+⏳ Sistema de Cooldowns
+
+Cada ataque tiene un tiempo de reutilización (cooldown):
+
+Tras usar un ataque, este queda temporalmente bloqueado
+El jugador debe decidir cuándo usar cada habilidad
+
+👉 Esto evita el uso repetitivo de ataques y fomenta la planificación.
+
+⚔️ Sistema de Ataques
+
+Los ataques están definidos por:
+
+Coste de energía
+Tiempo de reutilización
+Efecto en combate
+
+El jugador debe elegir cuidadosamente:
+
+Cuándo atacar
+Qué ataque usar
+Si ahorrar energía para habilidades más fuertes
+🔄 Cambio de Pokémon
+
+El jugador puede cambiar su Pokémon activo en cualquier momento:
+
+Permite adaptarse a la situación del combate
+Introduce decisiones estratégicas en tiempo real
+Tiene limitaciones para evitar abuso (como tiempo de espera)
+
+👉 El cambio puede usarse tanto ofensiva como defensivamente.
+
+🤝 Sistema de Apoyo (Assist)
+
+Los Pokémon de apoyo pueden intervenir brevemente en combate:
+
+Realizan acciones rápidas (ataques o habilidades)
+No permanecen en el campo
+Tienen su propio tiempo de reutilización
+
+👉 Este sistema añade profundidad táctica y permite crear jugadas más complejas.
+
+🧠 Enfoque Estratégico
+
+El sistema se basa en la combinación de varios factores:
+
+Gestión de energía
+Control de cooldowns
+Uso inteligente de los apoyos
+Cambio estratégico de Pokémon
+
+👉 El jugador no solo reacciona, sino que planifica constantemente.
+
+🎮 Experiencia de Juego
+
+El resultado es un combate:
+
+Dinámico y fluido
+Estratégico en tiempo real
+Más interactivo que el sistema clásico
+
+Inspirado en juegos de lucha modernos, este sistema busca ofrecer una experiencia más intensa y original dentro del concepto de combates Pokémon.
+
+
+
+
+Controles:
+
+Acción            ,Jugador 1 (Izquierda)    ,Jugador 2 (Derecha)      ,Coste Energía
+Ataque Rápido     ,Tecla 1                  ,Tecla 7                  ,15 EP
+Ataque Fuerte     ,Tecla 2                  ,Tecla 8                  ,35 EP
+Defensa / Escudo  ,Tecla 3                  ,Tecla 9                  ,10 EP
+Cambio/Apoyo      ,Tecla Q / W              ,Tecla O / P              ,TBD
