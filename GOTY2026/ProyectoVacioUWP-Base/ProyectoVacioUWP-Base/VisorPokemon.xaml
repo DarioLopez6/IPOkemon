@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="ProyectoVacioUWP_Base.VisorPokemon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoVacioUWP_Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="30" RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="tbNombre"
+                   Grid.Row="0"
+                   FontSize="42"
+                   FontWeight="ExtraBold"
+                   Foreground="#2A75BB"
+                   HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="1" ColumnSpacing="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0"
+                    CornerRadius="20"
+                    Background="White"
+                    BorderBrush="#22000000"
+                    BorderThickness="1"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch">
+
+                <Grid>
+                    <Viewbox Stretch="Uniform" Margin="20">
+                        <ContentControl x:Name="PokemonHost"/>
+                    </Viewbox>
+
+                    <Border Background="#22000000"
+                            CornerRadius="10"
+                            Padding="6,4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="15">
+                        <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                            <TextBlock Text="Animación"
+                                       VerticalAlignment="Center"
+                                       Foreground="Black"
+                                       FontWeight="SemiBold"
+                                       FontSize="14"/>
+                            <CheckBox x:Name="cbAnimacion"
+                                      VerticalAlignment="Center"
+                                      Checked="cbAnimacion_Checked"
+                                      Unchecked="cbAnimacion_Unchecked"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Column="1" 
+                        Spacing="10" 
+                        VerticalAlignment="Center">
+
+                <TextBlock Text="Información"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#2A75BB"
+                           Margin="5,0,0,5"/>
+
+                <Border Background="#2A75BB"
+                        CornerRadius="20"
+                        Padding="20">
+                    <Border.Shadow>
+                        <ThemeShadow/>
+                    </Border.Shadow>
+
+                    <StackPanel Spacing="12">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="Categoría:"
+                                       Foreground="#D6EAF8"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:Name="tbCategoria"
+                                       Foreground="White"
+                                       FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <TextBlock Text="Tipo:"
+                                   Foreground="#D6EAF8"
+                                   FontWeight="SemiBold"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <StackPanel x:Name="spTipo1" Orientation="Vertical" HorizontalAlignment="Center" Width="80">
+                                <Image x:Name="imgTipo1" Width="60" Height="60" Stretch="Uniform"/>
+                                <Border x:Name="borderTipo1" CornerRadius="8" Padding="2" Margin="0,4,0,0">
+                                    <TextBlock x:Name="txtTipo1" TextAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                                </Border>
+                            </StackPanel>
+                            <StackPanel x:Name="spTipo2" Orientation="Vertical" HorizontalAlignment="Center" Width="80">
+                                <Image x:Name="imgTipo2" Width="60" Height="60" Stretch="Uniform"/>
+                                <Border x:Name="borderTipo2" CornerRadius="8" Padding="2" Margin="0,4,0,0">
+                                    <TextBlock x:Name="txtTipo2" TextAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="Altura:"
+                                       Foreground="#D6EAF8"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:Name="tbAltura"
+                                       Foreground="White"
+                                       FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="Peso:"
+                                       Foreground="#D6EAF8"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:Name="tbPeso"
+                                       Foreground="White"
+                                       FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="Evolución:"
+                                       Foreground="#D6EAF8"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock x:Name="tbEvolucion"
+                                       Foreground="White"
+                                       FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="2"
+                Background="#11000000"
+                CornerRadius="15"
+                Padding="15">
+            <StackPanel>
+                <TextBlock Text="Descripción:"
+                           FontSize="18"
+                           FontWeight="Bold"/>
+                <TextBlock x:Name="tbDescripcion"
+                           TextWrapping="Wrap"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

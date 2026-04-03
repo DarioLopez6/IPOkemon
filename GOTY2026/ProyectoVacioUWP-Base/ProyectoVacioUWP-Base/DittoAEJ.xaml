@@ -1,0 +1,1201 @@
+﻿<UserControl
+    x:Class="ProyectoVacioUWP_Base.DittoAEJ"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:local="using:ProyectoVacioUWP_Base"
+ xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ mc:Ignorable="d"
+ d:DesignHeight="300"
+ d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <Storyboard x:Name="estatico"
+        AutoReverse="True"
+        RepeatBehavior="Forever">
+
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="brazoIzq" To="13.7" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01.0000000" Storyboard.TargetName="brazoDer" To="-31.85" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01.0000000" Storyboard.TargetName="chichonIz" To="-21.437" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01.0000000" Storyboard.TargetName="chichonDer" To="16.94" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="Cara" To="5.808" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="Cara" To="3.872" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimation Duration="00:00:01.0000000" Storyboard.TargetName="pieMid" To="10.113" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01.0000000" Storyboard.TargetName="pieIzq" To="-23.317" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="pieDer" To="11.99" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="mitadSuperior" To="49.852" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="mitadSuperior" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-4.84"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-6.292"/>
+            </DoubleAnimationUsingKeyFrames>
+
+        </Storyboard>
+        <Storyboard x:Name="ataqueDebil" FillBehavior="Stop">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="brazoDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-44.26"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-0.452"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-50.338"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="0.111"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-33.396"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-207.636"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-363"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-515.46"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-669.372"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-37.752"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-24.684"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-17.424"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-11.616"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-13.068"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="9.376"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-17.232"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="10.408"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-20.117"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-15.667"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.892"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-59.532"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-162.624"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-247.808"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-365.904"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-479.16"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-10.164"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-11.616"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-3.146"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-13.068"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-11.616"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-50.82"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-287.496"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-448.668"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="-608.388"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-68.244"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-79.86"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-81.312"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="-75.504"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-53.724"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="-153.912"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-287.496"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="-386.232"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectil4" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="30.492"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02.5000000" Value="29.04"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="31.944"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03.5000000" Value="29.04"/>
+            </DoubleAnimationUsingKeyFrames>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="0.730794675594384,5.60465899864485" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="0.730794675594384,4.50018999864485" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="0.730794675594384,3.39558999864485" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="35.1666727392406,13.5071603004665" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="35.1666727392406,14.6117603004665" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="35.1666727392406,12.4027103004665" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="35.1666727392406,13.5071603004665" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="2.21953133929253,7.79241" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="1.11503133929253,7.79241" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="0.0104338392925262,7.79241" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="23.6210013392925,13.6004" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="23.6210013392925,14.7049" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="22.6157456066083,13.2121718777225" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="23.7203456066083,13.2121718777225" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="24.8248456066083,13.2121718777225" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="23.6210013392925,12.4958" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoIz" To="23.6210013392925,13.6004" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="32.3680762627534,10.1191673474919" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="33.4726762627534,10.1191673474919" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="34.5771762627534,10.1191673474919" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="11.6927099878033,19.209734125801" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="11.6927099878033,18.105134125801" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="11.6927099878033,17.000634125801" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)"/>
+            <DoubleAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="-5.566" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimation Duration="00:00:00.2000000" Storyboard.TargetName="ojoDer" To="-7.986" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="68.8591966487912,14.9656304764486" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="96.8156966487912,9.93763047644865" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="100.008096648791,10.7978304764486" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="101.079091615201,25.9154927245272" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="99.2356916152013,28.0875927245272" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="75.5370916152013,37.4471927245272" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="44.5654898714499,34.0521274562949" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="8.72787987144991,11.3896274562949" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)"/>
+            <PointAnimation Duration="00:00:00.2000000" Storyboard.TargetName="boca" To="7.14894987144991,8.0034274562949" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)"/>
+        </Storyboard>
+        <Storyboard x:Name="ataqueFuerte">
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00.5000000" Value="51.9469918282094,198.170152169998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01.5000000" Value="43.9605011298473,36.364351165379"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00.5000000" Value="16.1093818282094,175.507652169998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01.5000000" Value="8.12288112984728,13.701351165379"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00.5000000" Value="14.5304518282094,172.121402169998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01.5000000" Value="6.54393112984728,10.315411165379"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00.5000000" Value="86.4986219425784,173.104248422718"/>
+                <EasingPointKeyFrame KeyTime="00:00:01.5000000" Value="99.5060948870347,29.9213129100986"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00.5000000" Value="84.6552219425784,175.276348422718"/>
+                <EasingPointKeyFrame KeyTime="00:00:01.5000000" Value="97.6626948870347,32.0933129100986"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00.5000000" Value="60.9566219425784,184.635948422718"/>
+                <EasingPointKeyFrame KeyTime="00:00:01.5000000" Value="73.9640948870347,41.4533129100986"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectilGordo" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-124.549"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-240.709"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-378.81"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-583.38"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="proyectilGordo" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-7.099"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-13.552"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-19.36"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-16.133"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="pasarAEscudo">
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="493.136527645441,120.420542394009"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="493.487220848094,120.877"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="463.391222127877,268.831518608592"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="466.164555681901,287.983679236555"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="426.397444733455,201.734339251225"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="298.99860763608,183.392190644646"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="424.440444733455,196.849339251225"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="297.04160763608,178.506190644646"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="422.437444733455,191.850339251225"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="298.847091188224,184.075886955433"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="420.798634477077,184.841047166859"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="193.526557801916,261.796442194139"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="415.059761536375,160.712376106826"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="157.911260447924,237.965352744566"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="413.921761536375,145.708376106826"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="143.445260447924,225.086352744566"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="417.162582594833,138.445053710967"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="94.5368896987012,169.609961658149"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[5].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="424.495581095711,129.22041668365"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="57.0901222716174,30.1497501476947"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[5].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="429.376581095711,126.02241668365"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="80.1456622679573,4.91841625134394"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[6].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="433.120581095711,123.57041668365"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="94.0432283925926,21.3106278982877"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[6].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="438.499627056128,121.579591740911"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="189.363983493867,32.0721156467432"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[8].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="477.673487443791,118.925314622687"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="320.109021664244,117.61442080154"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[9].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="493.136527645441,120.420542394009"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="493.487220848094,120.877"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="431.418222127877,212.226518608592"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="434.191555681901,231.378679236555"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="428.876222127877,206.914518608592"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="431.649555681901,226.065679236555"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[6].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="443.763627056128,120.236591740911"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="200.467764260867,7.78171118120312"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[7].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="448.648627056128,118.989591740911"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="213.322178975804,28.0630319195716"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[7].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="454.998773776363,118.649080867773"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="296.900290451478,28.5997472245227"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[7].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="461.224773776363,118.380080867773"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="322.414815638723,10.0295164914741"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[8].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="466.508773776363,118.151080867773"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="331.72161348693,12.9410329308117"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="589.961527645441,131.142542394009"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="590.311220848094,131.599"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="419.420634477077,180.298047166859"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="195.71198142969,248.282449268192"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="417.064634477077,172.531047166859"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="202.13398142969,254.896449268192"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="414.574761536375,154.310376106826"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="149.779260447924,219.036352744566"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="414.314582594833,144.494053710967"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="90.5817896987012,171.875961658149"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[5].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="419.532582594833,133.415053710967"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="93.7251631075814,178.631183425238"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[8].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="471.404487443791,118.435314622687"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="320.92690939048,119.406722684672"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[9].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="482.810487443791,119.326314622687"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="325.246021664244,118.01642080154"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[9].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="487.328527645441,119.528542394009"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="487.678220848094,119.985"/>
+            </PointAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="quitarEscudo">
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="493.487220848094,120.877"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="493.136527645441,120.420542394009"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="466.164555681901,287.983679236555"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="463.391222127877,268.831518608592"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="298.99860763608,183.392190644646"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="426.397444733455,201.734339251225"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="297.04160763608,178.506190644646"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="424.440444733455,196.849339251225"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="298.847091188224,184.075886955433"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="422.437444733455,191.850339251225"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="193.526557801916,261.796442194139"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="420.798634477077,184.841047166859"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="157.911260447924,237.965352744566"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="415.059761536375,160.712376106826"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="143.445260447924,225.086352744566"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="413.921761536375,145.708376106826"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="94.5368896987012,169.609961658149"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="417.162582594833,138.445053710967"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[5].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="57.0901222716174,30.1497501476947"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="424.495581095711,129.22041668365"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[5].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="80.1456622679573,4.91841625134394"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="429.376581095711,126.02241668365"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[6].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="94.0432283925926,21.3106278982877"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="433.120581095711,123.57041668365"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[6].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="189.363983493867,32.0721156467432"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="438.499627056128,121.579591740911"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[8].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="320.109021664244,117.61442080154"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="477.673487443791,118.925314622687"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[9].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="493.487220848094,120.877"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="493.136527645441,120.420542394009"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="434.191555681901,231.378679236555"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="431.418222127877,212.226518608592"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="431.649555681901,226.065679236555"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="428.876222127877,206.914518608592"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[6].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="200.467764260867,7.78171118120312"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="443.763627056128,120.236591740911"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[7].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="213.322178975804,28.0630319195716"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="448.648627056128,118.989591740911"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[7].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="296.900290451478,28.5997472245227"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="454.998773776363,118.649080867773"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[7].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="322.414815638723,10.0295164914741"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="461.224773776363,118.380080867773"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[8].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="331.72161348693,12.9410329308117"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="466.508773776363,118.151080867773"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="590.311220848094,131.599"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="589.961527645441,131.142542394009"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="195.71198142969,248.282449268192"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="419.420634477077,180.298047166859"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="202.13398142969,254.896449268192"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="417.064634477077,172.531047166859"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="149.779260447924,219.036352744566"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="414.574761536375,154.310376106826"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[4].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="90.5817896987012,171.875961658149"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="414.314582594833,144.494053710967"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[5].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="93.7251631075814,178.631183425238"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="419.532582594833,133.415053710967"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[8].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="320.92690939048,119.406722684672"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="471.404487443791,118.435314622687"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[9].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="325.246021664244,118.01642080154"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="482.810487443791,119.326314622687"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[9].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="487.678220848094,119.985"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="487.328527645441,119.528542394009"/>
+            </PointAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="derrotado">
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="mitadSuperior" To="-2.904" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="mitadSuperior" To="82.401" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="mitadSuperior" To="0.04" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="canvas" To="22.724" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="canvas" To="69.667" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="canvas" To="69.542" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="71.8286416337034,13.7388505880097"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="41.2984080008164,9.36141893899528"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="43.1142134641038,-2.03431196345616"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="72.1419729612344,2.85710323767082"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="lengua" To="-14.884" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="lengua" To="-0.909" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="lengua" To="0.897" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)"/>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="lengua" To="0.628" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)"/>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="8.49170755308816,12.3189587612496"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="99.0236258692703,29.1801835204198"/>
+            </PointAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+
+        <Storyboard x:Name="pasarACansado">
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="20.3928524383869,13.4541713743636"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="34.6103228660484,12.183674016998"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="20.3928524383869,14.5586713743636"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="34.6103228660484,13.288174016998"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="20.3928524383869,12.3495713743636"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="34.6103228660484,11.079074016998"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="20.3928524383869,13.4541713743636"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="34.6103228660484,12.183674016998"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="16.5437,13.51"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="5.57038326912281,12.8041750237159"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="16.5437,12.4055"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="5.57038326912281,11.6996750237159"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="16.5437,11.3009"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="5.57038326912281,10.5950750237159"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="17.4392,10.4055"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="17.5338560877393,12.6676730102802"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="18.5437,10.4055"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="18.6383560877393,12.6676730102802"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="19.6483,10.4055"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="19.7429560877393,12.6676730102802"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="21.09528604393,16.2143"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="37.7676677177921,15.8666553927167"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="21.09528604393,17.3189"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="37.7676677177921,16.9712553927168"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="21.09528604393,15.1098"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="37.7676677177921,14.7621553927167"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="21.09528604393,16.2143"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="37.7676677177921,15.8666553927167"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="15.8067273536871,17.3947545118387"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="0.50000000344253,15.7612579095116"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="15.8067273536871,16.2901545118387"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="0.50000000344253,14.6566579095116"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="15.8067273536871,15.1856545118386"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="0.50000000344253,13.5521579095116"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="17.9907,14.2143"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="17.5456214392194,16.3506543859988"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="19.0953,14.2143"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="18.6502214392194,16.3506543859988"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="20.1998,14.2143"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="19.7547214392194,16.3506543859988"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="brazoDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-0.824"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="39.828"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.071"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-7.836"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="mitadSuperior" To="-0.968" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="mitadSuperior" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1.452"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="65.34"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="quitarCansado">
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="34.6103228660484,12.183674016998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="20.3928524383869,13.4541713743636"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="34.6103228660484,13.288174016998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="20.3928524383869,14.5586713743636"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="34.6103228660484,11.079074016998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="20.3928524383869,12.3495713743636"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="34.6103228660484,12.183674016998"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="20.3928524383869,13.4541713743636"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="5.57038326912281,12.8041750237159"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="16.5437,13.51"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="5.57038326912281,11.6996750237159"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="16.5437,12.4055"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="5.57038326912281,10.5950750237159"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="16.5437,11.3009"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="17.5338560877393,12.6676730102802"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="17.4392,10.4055"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="18.6383560877393,12.6676730102802"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="18.5437,10.4055"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoIz" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="19.7429560877393,12.6676730102802"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="19.6483,10.4055"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.StartPoint)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="37.7676677177921,15.8666553927167"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="21.09528604393,16.2143"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="37.7676677177921,16.9712553927168"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="21.09528604393,17.3189"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="37.7676677177921,14.7621553927167"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="21.09528604393,15.1098"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="37.7676677177921,15.8666553927167"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="21.09528604393,16.2143"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point2)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="0.50000000344253,15.7612579095116"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="15.8067273536871,17.3947545118387"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point3)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="0.50000000344253,14.6566579095116"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="15.8067273536871,16.2901545118387"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)" EnableDependentAnimation="True">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="0.50000000344253,13.5521579095116"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="15.8067273536871,15.1856545118386"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="17.5456214392194,16.3506543859988"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="17.9907,14.2143"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point3)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="18.6502214392194,16.3506543859988"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="19.0953,14.2143"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ojoDer" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="19.7547214392194,16.3506543859988"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="20.1998,14.2143"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="brazoDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="39.828"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-0.824"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="brazoIzq" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-7.836"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.071"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="mitadSuperior" To="-0.968" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="mitadSuperior" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="65.34"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.452"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="pasarAHerido">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="pieMid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.52"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="14.81"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="pieIzq" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-2.1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="63.549"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="pieDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.815"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-49.35"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="chichonDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-3.358"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="20.374"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="chichonIz" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="4.811"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-28.352"/>
+            </DoubleAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="40.5231706455413,23.6923944993178"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="44.7942512402249,3.30915511495961"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="69.3653654369491,29.8163006116548"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="73.4322760912683,10.4013098157279"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="76.1818511098174,39.4457081879412"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="77.7055541564981,21.7400823564103"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="45.6987185013176,35.1544409250905"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="47.1972061477358,16.7862885363941"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="6.61038427584074,11.8871328674036"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="99.2961914893617,30.0370951154821"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1.936"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="3.63"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-0.968"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-14.278"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.988"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.988"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.926"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.926"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="quitarHerido">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="pieMid" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="14.81"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.52"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="pieIzq" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="63.549"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-2.1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="pieDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-49.35"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.815"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="chichonDer" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="20.374"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-3.358"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="chichonIz" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-28.352"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="4.811"/>
+            </DoubleAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="44.7942512402249,3.30915511495961"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="40.5231706455413,23.6923944993178"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[0].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="73.4322760912683,10.4013098157279"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="69.3653654369491,29.8163006116548"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="77.7055541564981,21.7400823564103"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="76.1818511098174,39.4457081879412"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[2].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="47.1972061477358,16.7862885363941"/>
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="45.6987185013176,35.1544409250905"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[3].(BezierSegment.Point2)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="6.61038427584074,11.8871328674036"/>
+            </PointAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="boca" Storyboard.TargetProperty="(Path.Data).(PathGeometry.Figures)[0].(PathFigure.Segments)[1].(BezierSegment.Point1)">
+                <EasingPointKeyFrame KeyTime="00:00:00" Value="99.2961914893617,30.0370951154821"/>
+            </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="3.63"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.936"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-14.278"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-0.968"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.988"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.988"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="lengua" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.926"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.926"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Viewbox x:Name="vbContenedorPrincipal" Stretch="Uniform">
+        <Grid x:Name="gridGeneral" Width="800" Height="450">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="50"/>
+
+                <ColumnDefinition Width="*"/>
+
+                <ColumnDefinition Width="50"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.Background>
+                <ImageBrush ImageSource="ms-appx:///AssetsDittoAEJ/fondop.jpg" 
+                        Stretch="UniformToFill" Opacity="0"/>
+            </Grid.Background>
+
+            <Image x:Name="simboloHeart" Source="AssetsDittoAEJ/corazon.png" 
+               Grid.Row="0" Grid.Column="0" Height="35" Visibility="Collapsed"/>
+
+            <ProgressBar x:Name="pbHealth" Value="50" Foreground="Red"
+                     Grid.Row="0" Grid.Column="1" Height="35" Margin="10,0" 
+                     VerticalAlignment="Center" Visibility="Collapsed"/>
+
+            <Image x:Name="imHealthPotion" Source="AssetsDittoAEJ/red-potion.png" 
+               Grid.Row="0" Grid.Column="2" Height="35" 
+               PointerReleased="useHealthPotion" Visibility="Collapsed"/>
+
+            <Image x:Name="simboloEnergy" Source="AssetsDittoAEJ/energia.png" 
+               Grid.Row="1" Grid.Column="0" Height="35" Visibility="Collapsed" VerticalAlignment="Top"/>
+
+            <ProgressBar x:Name="pbEnergy" Value="50" Foreground="Yellow"
+                     Grid.Row="1" Grid.Column="1" Height="35" Margin="10,0" 
+                     VerticalAlignment="Top" Visibility="Collapsed"/>
+
+            <Image x:Name="imEnergyPotion" Source="AssetsDittoAEJ/yellow-potion.png" 
+               Grid.Row="1" Grid.Column="2" Height="35" 
+               PointerReleased="useEnergyPotion" Visibility="Collapsed" VerticalAlignment="Top"/>
+
+            <Viewbox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" 
+                 Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Canvas x:Name="canvas" Width="500" Height="500" Margin="-10,0,10,-16" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <CompositeTransform/>
+                    </Canvas.RenderTransform>
+                    <Canvas.Background>
+                        <ImageBrush/>
+                    </Canvas.Background>
+                    <Canvas x:Name="mitadIferior" HorizontalAlignment="Left" Height="259" Canvas.Left="25.761" Canvas.Top="181.20299999999997" VerticalAlignment="Top" Width="450" RenderTransformOrigin="0.5,0.5">
+                        <Canvas.RenderTransform>
+                            <CompositeTransform/>
+                        </Canvas.RenderTransform>
+                        <Path x:Name="pieMid" Height="91" Canvas.Left="110.11" Stretch="Fill" Canvas.Top="168.882" Width="223" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.506,0.056" Data="M217.26609,50.090449 C318.15718,-23.020649 -30.420597,-46.835453 19.870611,33.787882 81.243122,72.698009 147.24423,76.599732 217.26609,50.090449 z">
+                            <Path.RenderTransform>
+                                <CompositeTransform/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,1">
+                                    <GradientStop Color="#FFA395B6" Offset="0"/>
+                                    <GradientStop Color="#FF9D8EB2" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="pieIzq" Height="114" Stretch="Fill" Canvas.Top="105.163" Width="102" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.782,0.35" Data="M32.130762,11.435369 C79.695347,-41.669791 159.444,116.60387 71.066667,113.86667 -0.026423503,104.88563 -6.4146424,67.888304 32.130762,11.435369 z">
+                            <Path.RenderTransform>
+                                <CompositeTransform/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,1">
+                                    <GradientStop Color="#FFAE9DC1" Offset="0"/>
+                                    <GradientStop Color="#FF9A8AAC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="pieDer" Height="112" Canvas.Left="349.662" Stretch="Fill" Canvas.Top="126.693" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.12,0.339" Data="M66.986624,4.3137159 C114.1885,55.39463 100.42378,104.63423 45.06513,98.65553 -40.060129,85.859761 -0.62314996,-56.492219 66.986624,4.3137159 z">
+                            <Path.RenderTransform>
+                                <CompositeTransform/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,1">
+                                    <GradientStop Color="#FFAC9CBF" Offset="0"/>
+                                    <GradientStop Color="#FF9B8AAC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="siluetaInferior" Height="243" Canvas.Left="14.808" Stretch="Fill" Width="421" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="0.417" Data="M158.74375,155.93925 C181.5688,219.02131 223.23436,218.77156 283.12183,166.41117 294.82188,151.72345 309.40064,142.84661 327.02183,143.27784 349.00873,143.8159 368.96707,126.92636 380.4,96.866333 376.8595,112.65136 386.04706,132.75586 406.84251,156.79967 430.9718,193.7974 422.78785,244.80704 385.00321,251.06633 354.32014,245.59696 325.5031,246.61355 298.37955,253.51633 234.36241,259.02009 168.60716,253.81001 100.94228,236.82883 88.187922,230.74301 70.865221,228.6562 47.575918,231.42447 12.662905,231.34156 -13.674717,168.79007 8.3833333,129.69967 42.46494,100.68041 61.236035,62.121087 61.551771,13.837488 59.641023,121.08416 78.981257,168.71881 124,139.96633 144.04909,123.08224 155.36016,129.11515 158.74375,155.93925 z">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,1">
+                                    <GradientStop Color="#FFAD9CC1" Offset="0"/>
+                                    <GradientStop Color="#FF9D8EAD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                    <Canvas x:Name="mitadSuperior" HorizontalAlignment="Left" Height="312" Canvas.Left="85.901" Canvas.Top="61.221" VerticalAlignment="Top" Width="366">
+                        <Canvas.RenderTransform>
+                            <CompositeTransform/>
+                        </Canvas.RenderTransform>
+                        <Path x:Name="chichonDer" Data="M59.665097,33.28777 C48.842464,6.3219705 29.095354,-7.7885955 1.8519109,3.2917208 -38.388679,20.392278 68.119414,64.632309 59.665097,33.28777 z" 
+      Width="69" Canvas.Top="8.658" Stretch="Fill" Canvas.Left="204.798" Height="44" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.477,0.905">
+
+                            <Path.RenderTransform>
+                                <CompositeTransform/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFE8E0EF" Offset="0"/>
+                                    <GradientStop Color="#FFCAB9DA" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <Path x:Name="brazoDer" Data="M61.6,16.9 C105.82105,29.939771 116.82495,55.103354 90.632382,78.140905 10.630294,135.68367 -56.900187,3.985121 61.6,16.9 z" 
+      Height="77" Canvas.Left="258.451" Stretch="Fill" Canvas.Top="108.591" Width="108" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.147,0.725">
+                            <Path.RenderTransform>
+                                <CompositeTransform Rotation="0.433"/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#FFD2C3DF" Offset="0"/>
+                                    <GradientStop Color="#FFC6B2D6" Offset="0.69"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <Path x:Name="chichonIz" Data="M69.6,12 C54.593487,-3.3278534 34.214972,0.83532415 8.144396,25.650794 -5.8645079,51.195332 96.566158,32.489491 69.6,12 z" 
+      Height="33" Canvas.Left="107.795" Stretch="Fill" Width="68" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.629,0.909">
+                            <Path.RenderTransform>
+                                <CompositeTransform/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#FFE8E1F0" Offset="0"/>
+                                    <GradientStop Color="#FFC7B3D7" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <Path x:Name="brazoIzq" 
+      Height="428" Canvas.Top="-80.704" Width="530" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.875,0.676" Canvas.Left="-417.398" UseLayoutRounding="False">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure IsClosed="True" StartPoint="493.487408090434,120.87715158682">
+                                        <BezierSegment Point2="463.548232681161,268.372922560567" Point3="431.574928582754,211.768137692289" Point1="590.312188978241,131.598811362579"/>
+                                        <BezierSegment Point2="426.780108550633,201.354377622633" Point3="424.822925424515,196.468616264953" Point1="429.032609711789,206.455554709817"/>
+                                        <BezierSegment Point2="421.127113700185,186.696459289008" Point3="419.748813360428,182.152929008644" Point1="422.82044801517,191.469786978852"/>
+                                        <BezierSegment Point2="415.957278890325,167.291293529597" Point3="415.47167584286,160.889104997763" Point1="417.392795630973,174.38638570353"/>
+                                        <BezierSegment Point2="415.881647384298,144.935716062743" Point3="418.730346982147,138.887452085539" Point1="414.819205560016,152.286947376732"/>
+                                        <BezierSegment Point2="424.704729456435,129.727771241473" Point3="429.586501005638,126.52991517713" Point1="421.099694456876,133.856932240081"/>
+                                        <BezierSegment Point2="437.824132040616,122.173166978223" Point3="443.087566967044,120.829724419808" Point1="433.329946278733,124.07773098839"/>
+                                        <BezierSegment Point2="453.521004520208,118.819244203367" Point3="459.746585464434,118.549909685535" Point1="447.972931831526,119.582781085383"/>
+                                        <BezierSegment Point2="470.80287179119,118.448732968484" Point3="477.072195983886,118.938791598996" Point1="465.030685259201,118.321306136273"/>
+                                        <BezierSegment Point2="487.67865782103,119.985200734344" Point3="493.487408090434,120.87715158682" Point1="482.208579296567,119.340290906232"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                            <Path.RenderTransform>
+                                <CompositeTransform Rotation="-1.056"
+                    TranslateX="2.606735637008708"
+                    TranslateY="-9.6869420216443736"/>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#FFDDD2E8" Offset="0"/>
+                                    <GradientStop Color="#FFC9B6D8" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <Path x:Name="siluetaSuperior" Data="M60.35,147.92365 C61.673833,101.66523 81.688321,72.096101 121.3111,60.03563 135.77658,57.739339 146.6099,53.891396 153.73744,48.460343 174.52692,35.145045 194.54207,30.383996 213.68466,35.262161 229.01599,41.255055 243.98038,42.641957 258.57958,39.444918 280.12681,41.514062 301.29002,48.659186 315.48312,67.324412 323.83357,99.916324 340.7048,123.18881 366.18248,137.04814 384.68974,145.04881 389.37996,175.06035 378.31602,230.16865 367.36936,261.80476 349.50408,275.79772 326.73822,276.61248 307.38857,277.37919 292.29237,285.29814 280.95209,300.32922 219.91109,353.63667 178.53401,350.15426 156.92269,289.58788 153.47432,261.3697 141.41997,257.75437 122.55,273.6236 76.557135,303.52436 58.069662,255.24047 60.35,147.92365 z" 
+      Height="306" Canvas.Left="16.009" Stretch="Fill" Canvas.Top="6.129" Width="326" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#FFCFBEDD" Offset="0"/>
+                                    <GradientStop Color="#FFC4B2D6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+
+                        <Canvas x:Name="Cara" HorizontalAlignment="Left" Height="56" Canvas.Left="124.523" Canvas.Top="48.146" VerticalAlignment="Center" Width="106">
+                            <Canvas.RenderTransform>
+                                <CompositeTransform/>
+                            </Canvas.RenderTransform>
+                            <Canvas x:Name="bocaEntera" Canvas.Top="16.994" Height="39" Width="97" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Canvas.RenderTransform>
+                                    <CompositeTransform/>
+                                </Canvas.RenderTransform>
+                                <Path x:Name="boca" 
+              Width="101" Stroke="Black" Height="188" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-7.567" Canvas.Top="-9.819" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <CompositeTransform/>
+                                    </Path.RenderTransform>
+                                    <Path.Data>
+                                        <PathGeometry>
+                                            <PathFigure IsClosed="True" StartPoint="11.5956655313413,10.5041753207178">
+                                                <BezierSegment Point2="69.2871354862953,32.0497822301486" Point3="97.2435852018655,27.0218348486911" Point1="40.4407187782447,26.0458793460733"/>
+                                                <BezierSegment Point2="100.790013196412,29.4814201821864" Point3="98.9466409544567,31.6535185099768" Point1="100.435499179493,27.8819833615524"/>
+                                                <BezierSegment Point2="44.625290962616,36.9562378717255" Point3="8.78769222880454,14.2937111784073" Point1="75.2480474429585,41.0131592825256"/>
+                                                <BezierSegment Point2="8.28147722533475,9.75971002054176" Point3="11.5956655313413,10.5041753207178" Point1="7.20876216699879,10.9074684728835"/>
+                                            </PathFigure>
+                                        </PathGeometry>
+                                    </Path.Data>
+                                    <Path.Fill>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#FFD9B5B5" Offset="0"/>
+                                            <GradientStop Color="#FFA57776" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path x:Name="boca_Enfadada" 
+                            Width="92" Stroke="Black" Height="44" Visibility="Collapsed" Canvas.Left="0.004" Canvas.Top="-0.031" UseLayoutRounding="False" Data="M4.0243245,0.71710614 C32.869377,16.25881 61.715793,22.262713 89.672243,17.234766 C92.864158,18.094914 91.995222,39.736105 90.151853,41.908203 C66.453259,51.267844 37.053949,27.169169 1.2163507,4.5066419 C-0.36257931,1.1203993 0.71013569,-0.027359165 4.0243245,0.71710614 z">
+                                    <Path.Fill>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#FFD9B5B5" Offset="0"/>
+                                            <GradientStop Color="#FFA57776" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path x:Name="lengua" Data="M1.476,4.8003333 C12.525237,8.54743 22.892091,10.642734 32.72216,11.438685 34.939539,13.362263 35.00877,14.947835 33.384881,16.267 20.75084,16.434722 8.2001302,13.833442 -4.2573333,8.1336667 -3.2833722,6.4993409 -1.4916129,5.3215952 1.476,4.8003333 z" 
+              Width="40" Stretch="Fill" Height="13" Canvas.Top="12.156" Canvas.Left="23.243" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <CompositeTransform/>
+                                    </Path.RenderTransform>
+                                    <Path.Fill>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#FFDCBAB9" Offset="0"/>
+                                            <GradientStop Color="#FFC48C8C" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                            </Canvas>
+
+                            <Path x:Name="ojoIz" 
+  Fill="Black" 
+  HorizontalAlignment="Left" 
+  VerticalAlignment="Top" 
+  Height="49" 
+  Width="57" 
+  Canvas.Left="-6.043" 
+  Canvas.Top="-12.905" 
+  Stroke="Black" 
+  UseLayoutRounding="False">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure IsClosed="True" StartPoint="20.543733894825,12.4054727554321">
+                                            <BezierSegment Point2="19.648303394825,14.4054727554321" Point3="18.543733894825,14.4054727554321" Point1="20.543733894825,13.5100422554321"/>
+                                            <BezierSegment Point2="16.543733894825,13.5100422554321" Point3="16.543733894825,12.4054727554321" Point1="17.439164394825,14.4054727554321"/>
+                                            <BezierSegment Point2="17.439164394825,10.4054727554321" Point3="18.543733894825,10.4054727554321" Point1="16.543733894825,11.3009032554321"/>
+                                            <BezierSegment Point2="20.543733894825,11.3009032554321" Point3="20.543733894825,12.4054727554321" Point1="19.648303394825,10.4054727554321"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+
+                            <Path x:Name="ojoDer" 
+          Fill="Black" HorizontalAlignment="Left" Height="19" Canvas.Left="64.246" Stroke="Black" Canvas.Top="0.352" VerticalAlignment="Top" Width="43" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" >
+                                <Path.RenderTransform>
+                                    <CompositeTransform TranslateX="-5.5660000000000007" TranslateY="-7.9859999999999989"/>
+                                </Path.RenderTransform>
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure IsClosed="True" StartPoint="21.095252752304,16.2143297195435">
+                                            <BezierSegment Point2="20.199822252304,18.2143297195435" Point3="19.095252752304,18.2143297195435" Point1="21.095252752304,17.3188992195435"/>
+                                            <BezierSegment Point2="17.095252752304,17.3188992195435" Point3="17.095252752304,16.2143297195435" Point1="17.990683252304,18.2143297195435"/>
+                                            <BezierSegment Point2="17.990683252304,14.2143297195435" Point3="19.095252752304,14.2143297195435" Point1="17.095252752304,15.1097602195435"/>
+                                            <BezierSegment Point2="21.095252752304,15.1097602195435" Point3="21.095252752304,16.2143297195435" Point1="20.199822252304,14.2143297195435"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path x:Name="ojoIz_Enfadado" 
+                        Fill="Black" 
+                        Height="15" 
+                        Width="22" 
+                        Canvas.Top="-12.433" 
+                        Stroke="Black" 
+                          Visibility="Collapsed"
+                        UseLayoutRounding="False" Data="M20.801912,12.378247 C20.801912,13.482816 19.906481,14.378247 18.801912,14.378247 C17.697342,14.378247 0.50000001,1.6839729 0.50000001,0.57940388 C0.50000001,-0.52516612 20.449781,10.259487 21.554351,10.259487 C22.65892,10.259487 20.801912,11.273677 20.801912,12.378247 z" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-6.781"/>
+                            <Path x:Name="ojoDer_Enfadado" 
+                        Fill="Black" Height="11" Canvas.Left="80.842" Stroke="Black" Visibility="Collapsed" Canvas.Top="7.596" Width="22" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Data="M21.535414,0.63685947 C21.535414,1.7414285 3.604569,10.970517 2.5,10.970517 C1.39543,10.970517 0.49999999,10.075086 0.49999999,8.9705175 C0.49999999,7.8659475 0.82865139,5.476642 1.9332214,5.476642 C3.0377904,5.476642 21.535414,-0.46771053 21.535414,0.63685947 z" >
+                                <Path.RenderTransform>
+                                    <CompositeTransform TranslateX="-5.5660000000000007" TranslateY="-7.9859999999999989"/>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Canvas>
+
+                        <Canvas x:Name="tirita1" Canvas.Left="130.567" Canvas.Top="17.42" Height="12" Width="31" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed" >
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-25.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <Rectangle Height="10" Stroke="Black" Width="30" Fill="#FFD8A271"/>
+                            <Rectangle Height="4" Canvas.Left="7.8" Canvas.Top="3" Width="12" Fill="#FFE0B38B"/>
+                        </Canvas>
+
+                        <Canvas x:Name="tirita2" Canvas.Left="228.167" Canvas.Top="72.487" Height="12" Width="31" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="30.667"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <Rectangle Height="10" Stroke="Black" Width="30" Fill="#FFD8A271"/>
+                            <Rectangle Height="4" Canvas.Left="7.8" Canvas.Top="3" Width="12" Fill="#FFE0B38B"/>
+                        </Canvas>
+                        <Canvas x:Name="herida" Height="16" Canvas.Left="221" Canvas.Top="27.146" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path Fill="#FFF4F4F5" Height="14" Stroke="Black" Stretch="Fill" Canvas.Top="1.5" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M30.2,67.72 L45.4,86.12"/>
+                            <Path Fill="#FFF4F4F5" Height="13" Canvas.Left="4.5" Stroke="Black" Stretch="Fill" Width="12" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M30.2,67.72 L45.4,86.12"/>
+                            <Path Fill="#FFF4F4F5" Height="12" Stroke="Black" Stretch="Fill" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M46.2,67.72 L30.2,80.52"/>
+                            <Path Fill="#FFF4F4F5" Height="10" Canvas.Left="4.5" Stroke="Black" Stretch="Fill" Canvas.Top="5.5" Width="11" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M46.2,67.72 L30.2,80.52"/>
+                        </Canvas>
+
+                        <Canvas x:Name="herida3" Height="16" Canvas.Left="237" Canvas.Top="120.936" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path Fill="#FFF4F4F5" Height="14" Stroke="Black" Stretch="Fill" Canvas.Top="1.5" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M30.2,67.72 L45.4,86.12"/>
+                            <Path Fill="#FFF4F4F5" Height="13" Canvas.Left="4.5" Stroke="Black" Stretch="Fill" Width="12" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M30.2,67.72 L45.4,86.12"/>
+                            <Path Fill="#FFF4F4F5" Height="12" Stroke="Black" Stretch="Fill" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M46.2,67.72 L30.2,80.52"/>
+                            <Path Fill="#FFF4F4F5" Height="10" Canvas.Left="4.5" Stroke="Black" Stretch="Fill" Canvas.Top="5.5" Width="11" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M46.2,67.72 L30.2,80.52"/>
+                        </Canvas>
+
+                        <Canvas x:Name="herida2" Height="16" Canvas.Left="79.523" Canvas.Top="76.146" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path Fill="#FFF4F4F5" Height="14" Stroke="Black" Stretch="Fill" Canvas.Top="1.5" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M30.2,67.72 L45.4,86.12"/>
+                            <Path Fill="#FFF4F4F5" Height="13" Canvas.Left="4.5" Stroke="Black" Stretch="Fill" Width="12" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M30.2,67.72 L45.4,86.12"/>
+                            <Path Fill="#FFF4F4F5" Height="12" Stroke="Black" Stretch="Fill" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M46.2,67.72 L30.2,80.52"/>
+                            <Path Fill="#FFF4F4F5" Height="10" Canvas.Left="4.5" Stroke="Black" Stretch="Fill" Canvas.Top="5.5" Width="11" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M46.2,67.72 L30.2,80.52"/>
+                        </Canvas>
+
+                        <Canvas x:Name="hojoMuerto2" Height="19" Canvas.Left="197.367" Canvas.Top="55.247" Width="20" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Canvas.RenderTransform>
+                                <RotateTransform Angle="179.275"/>
+                            </Canvas.RenderTransform>
+                            <Path Height="5" Stroke="Black" Stretch="Fill" Canvas.Top="13.639" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M40.180778,72.236542 C45.767445,78.966218 51.054986,80.007 59.599005,75.583979"/>
+                            <Path Height="15" Canvas.Left="13.2" Stroke="Black" Stretch="Fill" Canvas.Top="2.44" Width="7" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M62.799328,74.464063 C67.068468,71.577864 72.245671,66.711225 63.729627,60.396916"/>
+                            <Path Height="6" Canvas.Left="3.217" Stroke="Black" Stretch="Fill" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M64.490477,60.696937 C58.987171,56.431001 56.812546,56.804012 52.657757,62.165831"/>
+                            <Path Height="11" Canvas.Left="2.121" Stroke="Black" Stretch="Fill" Canvas.Top="4.267" Width="4" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M50.727312,60.204512 C46.916876,66.698126 50.327545,70.82239 52.501151,70.551979"/>
+                            <Path Height="3" Canvas.Left="3.906" Stroke="Black" Stretch="Fill" Canvas.Top="13.736" Width="8" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M53.310577,71.580754 C57.461318,73.816433 58.035962,72.875271 60.36659,72.036564"/>
+                            <Path Height="9" Canvas.Left="10.225" Stroke="Black" Stretch="Fill" Canvas.Top="6.724" Width="6" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M60.189499,74.070001 C66.470202,71.149993 67.286487,68.517689 63.367,66.221"/>
+                            <Path Height="6" Canvas.Left="4.525" Stroke="Black" Stretch="Fill" Canvas.Top="3.445" Width="10" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M64.233,66.887 C60.613175,60.845734 55.215938,63.297305 55.025002,67.909353"/>
+                            <Path Height="6" Canvas.Left="6.881" Stroke="Black" Stretch="Fill" Canvas.Top="7.923" Width="5" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M59.141987,66.521929 C60.819742,69.07213 58.714584,69.341193 55.568364,70.332189"/>
+                            <Path Height="6" Canvas.Left="4.402" Stroke="Black" Stretch="Fill" Canvas.Top="7.923" Width="4" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M54.074698,65.953834 C53.594141,69.191357 54.550831,71.133034 56.996406,71.732307"/>
+                            <Path Height="3" Canvas.Left="6.488" Stroke="Black" Stretch="Fill" Canvas.Top="6.589" Width="5" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M60.121875,67.141268 C58.127375,63.974532 58.112234,63.819012 56.117734,67.021487"/>
+                        </Canvas>
+
+                        <Canvas x:Name="hojoMuerto" Height="19" Canvas.Left="125.9" Canvas.Top="40.18" Width="20" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Canvas.RenderTransform>
+                                <RotateTransform Angle="203.412"/>
+                            </Canvas.RenderTransform>
+                            <Path Height="5" Stroke="Black" Stretch="Fill" Canvas.Top="13.639" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M40.180778,72.236542 C45.767445,78.966218 51.054986,80.007 59.599005,75.583979"/>
+                            <Path Height="15" Canvas.Left="13.2" Stroke="Black" Stretch="Fill" Canvas.Top="2.44" Width="7" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M62.799328,74.464063 C67.068468,71.577864 72.245671,66.711225 63.729627,60.396916"/>
+                            <Path Height="6" Canvas.Left="3.217" Stroke="Black" Stretch="Fill" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M64.490477,60.696937 C58.987171,56.431001 56.812546,56.804012 52.657757,62.165831"/>
+                            <Path Height="11" Canvas.Left="2.121" Stroke="Black" Stretch="Fill" Canvas.Top="4.267" Width="4" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M50.727312,60.204512 C46.916876,66.698126 50.327545,70.82239 52.501151,70.551979"/>
+                            <Path Height="3" Canvas.Left="3.906" Stroke="Black" Stretch="Fill" Canvas.Top="13.736" Width="8" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M53.310577,71.580754 C57.461318,73.816433 58.035962,72.875271 60.36659,72.036564"/>
+                            <Path Height="9" Canvas.Left="10.225" Stroke="Black" Stretch="Fill" Canvas.Top="6.724" Width="6" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M60.189499,74.070001 C66.470202,71.149993 67.286487,68.517689 63.367,66.221"/>
+                            <Path Height="6" Canvas.Left="4.525" Stroke="Black" Stretch="Fill" Canvas.Top="3.445" Width="10" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M64.233,66.887 C60.613175,60.845734 55.215938,63.297305 55.025002,67.909353"/>
+                            <Path Height="6" Canvas.Left="6.881" Stroke="Black" Stretch="Fill" Canvas.Top="7.923" Width="5" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M59.141987,66.521929 C60.819742,69.07213 58.714584,69.341193 55.568364,70.332189"/>
+                            <Path Height="6" Canvas.Left="4.402" Stroke="Black" Stretch="Fill" Canvas.Top="7.923" Width="4" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M54.074698,65.953834 C53.594141,69.191357 54.550831,71.133034 56.996406,71.732307"/>
+                            <Path Height="3" Canvas.Left="6.488" Stroke="Black" Stretch="Fill" Canvas.Top="6.589" Width="5" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M60.121875,67.141268 C58.127375,63.974532 58.112234,63.819012 56.117734,67.021487"/>
+                        </Canvas>
+
+                        <Canvas x:Name="Zs" HorizontalAlignment="Left" Height="58" Canvas.Left="55.523" Canvas.Top="6.129" VerticalAlignment="Center" Width="64" Visibility="Collapsed">
+                            <Canvas x:Name="z1" Height="19" Width="32" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Path Fill="#FFF4F4F5" Height="6" Canvas.Left="1.433" Stroke="Black" Stretch="Fill" Width="31" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M76.232333,42.532333 L106.63233,47.865667"/>
+                                <Path Fill="#FFF4F4F5" Height="10" Stroke="Black" Stretch="Fill" Canvas.Top="4.975" Width="32" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M107.22328,47.484474 L74.799,56.432333"/>
+                                <Path Fill="#FFF4F4F5" Height="5" Canvas.Left="0.358" Stroke="Black" Stretch="Fill" Canvas.Top="13.925" Width="31" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M75.157323,56.471795 L105.23233,60.465667"/>
+                            </Canvas>
+                            <Canvas x:Name="z2" Height="16" Canvas.Left="24.233" Canvas.Top="26.737" Width="27" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Path Fill="#FFF4F4F5" Height="5" Stroke="Black" Stretch="Fill" Width="26" Canvas.Left="1.467" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M81.18076,43.454091 L106.63233,47.865667"/>
+                                <Path Fill="#FFF4F4F5" Height="9" Stroke="Black" Stretch="Fill" Width="27" Canvas.Top="3.941" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M107.23137,47.385676 L80.097014,55.080094"/>
+                                <Path Fill="#FFF4F4F5" Height="4" Stroke="Black" Stretch="Fill" Width="24" Canvas.Top="11.711" Canvas.Left="0.368" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M79.772248,55.446592 L103.21293,58.420539"/>
+                            </Canvas>
+                            <Canvas x:Name="z3" Height="10" Canvas.Left="47.48" Canvas.Top="47.737" Width="17" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Path Fill="#FFF4F4F5" Height="3" Stroke="Black" Stretch="Fill" Width="15" Canvas.Left="1.887" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M90.913264,45.350625 L105.44673,47.293795"/>
+                                <Path Fill="#FFF4F4F5" Height="7" Stroke="Black" Stretch="Fill" Width="16" Canvas.Top="1.867" Canvas.Left="0.426" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M105.80807,46.946888 L89.968899,53.90124"/>
+                                <Path Fill="#FFF4F4F5" Height="3" Stroke="Black" Stretch="Fill" Width="17" Canvas.Top="7.494" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M88.913499,52.713542 L104.57255,54.466852"/>
+                            </Canvas>
+                        </Canvas>
+                        <Path x:Name="proyectil1" Data="M17.5,9 C17.5,13.69442 13.69442,17.5 9,17.5 7.0094827,17.5 5.1787709,16.815791 3.7302211,15.669729 2.246414,14.495773 -12.896022,16.01085 -13.338855,14.106667 -13.483269,13.485684 -6.1044284,10.771604 -6.1044284,10.106667 -6.1044284,7.3442805 -13.341156,4.8592106 -11.3,3.3066667 -9.8723994,2.2208055 7.0679658,0.5 9,0.5 13.69442,0.5 17.5,4.3055796 17.5,9 z" 
+      Height="18" Stroke="Black" Stretch="Fill" Width="32" Fill="#FFC4B2D6" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Canvas.Left="293.2" Canvas.Top="122" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path.RenderTransform>
+                                <CompositeTransform Rotation="-181.643"/>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path x:Name="proyectil2" Data="M17.5,9 C17.5,13.69442 13.69442,17.5 9,17.5 7.0094827,17.5 5.1787709,16.815791 3.7302211,15.669729 2.246414,14.495773 -12.896022,16.01085 -13.338855,14.106667 -13.483269,13.485684 -6.1044284,10.771604 -6.1044284,10.106667 -6.1044284,7.3442805 -13.341156,4.8592106 -11.3,3.3066667 -9.8723994,2.2208055 7.0679658,0.5 9,0.5 13.69442,0.5 17.5,4.3055796 17.5,9 z" 
+      Height="18" Stroke="Black" Stretch="Fill" Width="32" Fill="#FFC4B2D6" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Canvas.Left="50" Canvas.Top="79.4" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path.RenderTransform>
+                                <CompositeTransform Rotation="-180.428"/>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path x:Name="proyectil3" Data="M17.5,9 C17.5,13.69442 13.69442,17.5 9,17.5 7.0094827,17.5 5.1787709,16.815791 3.7302211,15.669729 2.246414,14.495773 -12.896022,16.01085 -13.338855,14.106667 -13.483269,13.485684 -6.1044284,10.771604 -6.1044284,10.106667 -6.1044284,7.3442805 -13.341156,4.8592106 -11.3,3.3066667 -9.8723994,2.2208055 7.0679658,0.5 9,0.5 13.69442,0.5 17.5,4.3055796 17.5,9 z" 
+      Height="18" Stroke="Black" Stretch="Fill" Width="32" Fill="#FFC4B2D6" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Canvas.Left="303.6" Canvas.Top="142.4" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path.RenderTransform>
+                                <CompositeTransform Rotation="-179.98"/>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path x:Name="proyectil4" Data="M17.5,9 C17.5,13.69442 13.69442,17.5 9,17.5 7.0094827,17.5 5.1787709,16.815791 3.7302211,15.669729 2.246414,14.495773 -12.896022,16.01085 -13.338855,14.106667 -13.483269,13.485684 -6.1044284,10.771604 -6.1044284,10.106667 -6.1044284,7.3442805 -13.341156,4.8592106 -11.3,3.3066667 -9.8723994,2.2208055 7.0679658,0.5 9,0.5 13.69442,0.5 17.5,4.3055796 17.5,9 z" 
+      Height="18" Stroke="Black" Stretch="Fill" Width="32" Fill="#FFC4B2D6" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Canvas.Left="44.2" Canvas.Top="62.333" VerticalAlignment="Top" Visibility="Collapsed">
+                            <Path.RenderTransform>
+                                <CompositeTransform Rotation="-180.105"/>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path x:Name="proyectilGordo" Data="M238.76888,85.37 C238.76888,94.908096 189.03578,91.687812 185.97356,100.17 182.19765,110.62906 221.06525,126.55409 213.57111,134.47 198.98968,149.87208 103.38363,160.5 80.5,160.5 36.31722,160.5 0.5,124.68278 0.5,80.5 0.5,36.31722 36.31722,0.5 80.5,0.5 100.64588,0.5 237.52498,20.779157 251.59,33.07 261.06966,41.353885 191.39103,42.38178 196.12949,54.27 199.77939,63.427156 238.76888,74.911187 238.76888,85.37 z" 
+      Height="125" Canvas.Left="156" Stroke="Black" Stretch="Fill" Canvas.Top="109.146" Width="178" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#FFC4B2D6" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                            <Path.RenderTransform>
+                                <CompositeTransform/>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </Canvas>
+                </Canvas>
+            </Viewbox>
+
+            <TextBlock x:Name="txtNombre" Text="DITTO" FontWeight="Bold"
+                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                   FontSize="24" Foreground="Black" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Visibility="Collapsed"/>
+
+        </Grid>
+    </Viewbox>
+</UserControl>

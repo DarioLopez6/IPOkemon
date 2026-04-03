@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{22712C46-E50E-4087-8EA2-F37398B06592}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoVacioUWP_Base</RootNamespace>
+    <AssemblyName>ProyectoVacioUWP-Base</AssemblyName>
+    <DefaultLanguage>es-ES</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AcercaDePage.xaml.cs">
+      <DependentUpon>AcercaDePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CombatePage.xaml.cs">
+      <DependentUpon>CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerrorDLM.xaml.cs">
+      <DependentUpon>ComputerrorDLM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DittoAEJ.xaml.cs">
+      <DependentUpon>DittoAEJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iPokemon.cs" />
+    <Compile Include="Pokemon.cs" />
+    <Compile Include="TorchicJFBR.xaml.cs">
+      <DependentUpon>TorchicJFBR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexPage.xaml.cs">
+      <DependentUpon>PokedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisorPokemon.xaml.cs">
+      <DependentUpon>VisorPokemon.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AssetsComputerrorDLM\Antivirus2-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\Antivirus2Escudo-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\apagadoDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\aranazoFlojoDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\aranazoSimple-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\bateriaNaranja-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\bateriaRoja-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\bateriaVerde-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\cableEnchufe.png" />
+    <Content Include="AssetsComputerrorDLM\cablesCentro.png" />
+    <Content Include="AssetsComputerrorDLM\cablesDerechos1.png" />
+    <Content Include="AssetsComputerrorDLM\cablesIzquierdos1.png" />
+    <Content Include="AssetsComputerrorDLM\cablesLateral.png" />
+    <Content Include="AssetsComputerrorDLM\computerrorDiedIcon.png" />
+    <Content Include="AssetsComputerrorDLM\computerrorLifeIcon.png" />
+    <Content Include="AssetsComputerrorDLM\computerror_preevolucionPantalla-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\corazon.png" />
+    <Content Include="AssetsComputerrorDLM\curaDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\desescudoDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\desexplosionDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\enchufador.png" />
+    <Content Include="AssetsComputerrorDLM\enchufe.png" />
+    <Content Include="AssetsComputerrorDLM\enchufe1-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\energia.png" />
+    <Content Include="AssetsComputerrorDLM\escudoDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\explosionDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\fondoDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\fondoPokemon.jpg" />
+    <Content Include="AssetsComputerrorDLM\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsComputerrorDLM\muerteDEFINITIVA.wav" />
+    <Content Include="AssetsComputerrorDLM\rayoDEFINITIVO.wav" />
+    <Content Include="AssetsComputerrorDLM\rayoMorado-removebg-preview.png" />
+    <Content Include="AssetsComputerrorDLM\red-potion.png" />
+    <Content Include="AssetsComputerrorDLM\yellow-potion.png" />
+    <Content Include="AssetsDittoAEJ\corazon.png" />
+    <Content Include="AssetsDittoAEJ\curar.mp3" />
+    <Content Include="AssetsDittoAEJ\dormir.mp3" />
+    <Content Include="AssetsDittoAEJ\energia.mp3" />
+    <Content Include="AssetsDittoAEJ\energia.png" />
+    <Content Include="AssetsDittoAEJ\escudo.mp3" />
+    <Content Include="AssetsDittoAEJ\escudo.png" />
+    <Content Include="AssetsDittoAEJ\fondop.jpg" />
+    <Content Include="AssetsDittoAEJ\fuerte.mp3" />
+    <Content Include="AssetsDittoAEJ\herido.mp3" />
+    <Content Include="AssetsDittoAEJ\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsDittoAEJ\muerte.mp3" />
+    <Content Include="AssetsDittoAEJ\pew.mp3" />
+    <Content Include="AssetsDittoAEJ\pokemon.png" />
+    <Content Include="AssetsDittoAEJ\red-potion.png" />
+    <Content Include="AssetsDittoAEJ\SplashScreen.scale-200.png" />
+    <Content Include="AssetsDittoAEJ\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsDittoAEJ\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsDittoAEJ\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsDittoAEJ\StoreLogo.png" />
+    <Content Include="AssetsDittoAEJ\vote.mp3" />
+    <Content Include="AssetsDittoAEJ\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsDittoAEJ\yellow-potion.png" />
+    <Content Include="Assets\acero.png" />
+    <Content Include="Assets\agua.png" />
+    <Content Include="Assets\bicho.png" />
+    <Content Include="Assets\computerror.png" />
+    <Content Include="Assets\ditto.png" />
+    <Content Include="Assets\dragon.png" />
+    <Content Include="Assets\dragón.png" />
+    <Content Include="Assets\electrico.png" />
+    <Content Include="Assets\eléctrico.png" />
+    <Content Include="Assets\fantasma.png" />
+    <Content Include="Assets\fuego.png" />
+    <Content Include="Assets\hada.png" />
+    <Content Include="Assets\hielo.png" />
+    <Content Include="Assets\lucha.png" />
+    <Content Include="Assets\normal.png" />
+    <Content Include="Assets\planta.png" />
+    <Content Include="Assets\pokeball.png" />
+    <Content Include="Assets\psiquico.png" />
+    <Content Include="Assets\psíquico.png" />
+    <Content Include="Assets\roca.png" />
+    <Content Include="Assets\siniestro.png" />
+    <Content Include="Assets\tierra.png" />
+    <Content Include="Assets\torchic.png" />
+    <Content Include="Assets\veneno.png" />
+    <Content Include="Assets\volador.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="TorchicAssets\corazon.png" />
+    <Content Include="TorchicAssets\Damage.mp3" />
+    <Content Include="TorchicAssets\Ember.mp3" />
+    <Content Include="TorchicAssets\energia.png" />
+    <Content Include="TorchicAssets\Faint.mp3" />
+    <Content Include="TorchicAssets\Flash.mp3" />
+    <Content Include="TorchicAssets\Healing.mp3" />
+    <Content Include="TorchicAssets\imFondo.png" />
+    <Content Include="TorchicAssets\LockScreenLogo.scale-200.png" />
+    <Content Include="TorchicAssets\Protect.mp3" />
+    <Content Include="TorchicAssets\red-potion.png" />
+    <Content Include="TorchicAssets\Sleep.mp3" />
+    <Content Include="TorchicAssets\SplashScreen.scale-200.png" />
+    <Content Include="TorchicAssets\Square150x150Logo.scale-200.png" />
+    <Content Include="TorchicAssets\Square44x44Logo.scale-200.png" />
+    <Content Include="TorchicAssets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="TorchicAssets\StoreLogo.png" />
+    <Content Include="TorchicAssets\Torchic.mp3" />
+    <Content Include="TorchicAssets\Wide310x150Logo.scale-200.png" />
+    <Content Include="TorchicAssets\Yawn.mp3" />
+    <Content Include="TorchicAssets\yellow-potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AcercaDePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComputerrorDLM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DittoAEJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TorchicJFBR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokedexPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VisorPokemon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.14</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
