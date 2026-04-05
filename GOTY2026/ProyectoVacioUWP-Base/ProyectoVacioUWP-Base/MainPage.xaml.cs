@@ -70,9 +70,9 @@ namespace ProyectoVacioUWP_Base
                     break;
 
                 case "Combate":
-                    if (currentPageType != typeof(CombatePage))
+                    if (currentPageType != typeof(SeleccionPage))
                     {
-                        frCentral.Navigate(typeof(CombatePage), this);
+                        frCentral.Navigate(typeof(SeleccionPage), this);
                     }
                     break;
 

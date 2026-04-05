@@ -136,6 +136,9 @@
     </Compile>
     <Compile Include="iPokemon.cs" />
     <Compile Include="Pokemon.cs" />
+    <Compile Include="SeleccionPage.xaml.cs">
+      <DependentUpon>SeleccionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TorchicJFBR.xaml.cs">
       <DependentUpon>TorchicJFBR.xaml</DependentUpon>
     </Compile>
@@ -290,6 +293,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SeleccionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

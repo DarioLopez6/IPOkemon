@@ -16,13 +16,19 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <local:ComputerrorDLM x:Name="P1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="550" Width="450"/>
+            <ContentControl x:Name="ContenedorP1" 
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                            Height="550" Width="450"
+                            HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
 
-            <local:TorchicJFBR x:Name="P2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="550" Width="450">
-                <local:TorchicJFBR.RenderTransform>
+            <ContentControl x:Name="ContenedorP2" Grid.Column="1" 
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                            Height="550" Width="450"
+                            HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ContentControl.RenderTransform>
                     <ScaleTransform ScaleX="-1" CenterX="225"/>
-                </local:TorchicJFBR.RenderTransform>
-            </local:TorchicJFBR>
+                </ContentControl.RenderTransform>
+            </ContentControl>
         </Grid>
 
         <Grid Grid.Row="1" Background="#1E1E1E" BorderBrush="#333" BorderThickness="0,2,0,0">
@@ -45,9 +51,9 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="txtW" Grid.Row="0" Grid.Column="0" Text="[W] FLOJO (15 EP)" Foreground="White" Margin="5"/>
-                        <TextBlock x:Name="txtA" Grid.Row="0" Grid.Column="1" Text="[A] FUERTE (40 EP)" Foreground="Yellow" Margin="5"/>
-                        <TextBlock x:Name="txtS" Grid.Row="1" Grid.Column="0" Text="[S] ESCUDO (15 EP)" Foreground="Cyan" Margin="5"/>
+                        <TextBlock x:Name="txtW" Grid.Row="0" Grid.Column="0" Text="[W] FLOJO" Foreground="White" Margin="5"/>
+                        <TextBlock x:Name="txtA" Grid.Row="0" Grid.Column="1" Text="[A] FUERTE" Foreground="Yellow" Margin="5"/>
+                        <TextBlock x:Name="txtS" Grid.Row="1" Grid.Column="0" Text="[S] ESCUDO" Foreground="Cyan" Margin="5"/>
                         <TextBlock x:Name="txtD" Grid.Row="1" Grid.Column="1" Text="[D] RELAX" Foreground="LightGreen" Margin="5"/>
                         <TextBlock x:Name="txtQ" Grid.Row="2" Grid.Column="0" Text="[Q] POC. VIDA" Foreground="Salmon" Margin="5"/>
                         <TextBlock x:Name="txtE" Grid.Row="2" Grid.Column="1" Text="[E] POC. ENERG" Foreground="Orange" Margin="5"/>
@@ -73,9 +79,9 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="txtUp" Grid.Row="0" Grid.Column="0" Text="[↑] FLOJO (15 EP)" Foreground="White" Margin="5"/>
-                        <TextBlock x:Name="txtLeft" Grid.Row="0" Grid.Column="1" Text="[←] FUERTE (40 EP)" Foreground="Yellow" Margin="5"/>
-                        <TextBlock x:Name="txtDown" Grid.Row="1" Grid.Column="0" Text="[↓] ESCUDO (15 EP)" Foreground="Cyan" Margin="5"/>
+                        <TextBlock x:Name="txtUp" Grid.Row="0" Grid.Column="0" Text="[↑] FLOJO" Foreground="White" Margin="5"/>
+                        <TextBlock x:Name="txtLeft" Grid.Row="0" Grid.Column="1" Text="[←] FUERTE" Foreground="Yellow" Margin="5"/>
+                        <TextBlock x:Name="txtDown" Grid.Row="1" Grid.Column="0" Text="[↓] ESCUDO" Foreground="Cyan" Margin="5"/>
                         <TextBlock x:Name="txtRight" Grid.Row="1" Grid.Column="1" Text="[→] RELAX" Foreground="LightGreen" Margin="5"/>
                         <TextBlock x:Name="txtO" Grid.Row="2" Grid.Column="0" Text="[O] POC. VIDA" Foreground="Salmon" Margin="5"/>
                         <TextBlock x:Name="txtP" Grid.Row="2" Grid.Column="1" Text="[P] POC. ENERG" Foreground="Orange" Margin="5"/>
