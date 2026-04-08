@@ -1,0 +1,254 @@
+﻿<Page
+    x:Class="ProyectoVacioUWP_Base.PokedexPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoVacioUWP_Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style x:Key="NoGrayButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}" />
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="24,12"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="MinWidth" Value="80"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="RootBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding CornerRadius}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Padding="20">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <!-- For narrow screens -->
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TypeWrapGridButtons.Orientation" Value="Vertical"/>
+                        <Setter Target="TypeWrapGridButtons.MaximumRowsOrColumns" Value="3"/>
+                        <Setter Target="HeaderPanel.Orientation" Value="Vertical"/>
+                        <Setter Target="HeaderPanel.HorizontalAlignment" Value="Center"/>
+                        <Setter Target="sb.Margin" Value="0,10,0,0"/>
+                        <Setter Target="TypeFilterStack.Margin" Value="0,10,0,0"/>
+                        <Setter Target="PokemonList.ItemWidth" Value="150"/>
+                        <Setter Target="PokemonList.ItemHeight" Value="150"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HeaderPanel.Orientation" Value="Horizontal"/>
+                        <Setter Target="HeaderPanel.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Target="sb.Margin" Value="0,20,0,0"/>
+                        <Setter Target="TypeFilterStack.Margin" Value="0,20,0,0"/>
+                        <Setter Target="TypeFilterStack.Margin.MaximumRowsOrColumns" Value="2"/>
+                        <Setter Target="PokemonList.ItemWidth" Value="200"/>
+                        <Setter Target="TypeWrapGridButtons.Orientation" Value="Horizontal"/>
+                        <Setter Target="TypeWrapGridButtons.MaximumRowsOrColumns" Value="2"/>
+                        <Setter Target="PokemonList.ItemHeight" Value="200"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" VerticalAlignment="Center" Spacing="8" Grid.Row="0">
+            <Image Source="Assets/pokeball.png" Width="80" Height="80"/>
+            <Border Background="Red" CornerRadius="8" Padding="8,4" BorderBrush="DarkRed" BorderThickness="2" VerticalAlignment="Center">
+                <TextBlock Text="POKÉDEX" FontSize="28" Foreground="White" FontWeight="Bold"/>
+            </Border>
+            <AutoSuggestBox x:Name="sb" Margin="0,20,0,0" PlaceholderText="Buscar Pokémon..."
+                            HorizontalAlignment="Stretch"
+                            TextChanged="SearchBox_TextChanged"
+                            QuerySubmitted="SearchBox_QuerySubmitted"/>
+        </StackPanel>
+
+        <!-- Type Buttons -->
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <ItemsControl x:Name="TypeFilterStack" HorizontalAlignment="Left">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid x:Name="TypeWrapGridButtons" Orientation="Vertical"
+                               MaximumRowsOrColumns="3" ItemHeight="50" ItemWidth="140"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88FF0000" BorderBrush="#F08030">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Image Source="Assets/fuego.png" Width="24" Height="24"/>
+                        <TextBlock Text="Fuego" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#8800A0FF" BorderBrush="#6890F0">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Image Source="Assets/agua.png" Width="24" Height="24"/>
+                        <TextBlock Text="Agua" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#8800FF00" BorderBrush="#78C850">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Image Source="Assets/planta.png" Width="24" Height="24"/>
+                        <TextBlock Text="Planta" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88F85888" BorderBrush="#F85888">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/psiquico.png" Width="24" Height="24"/>
+                        <TextBlock Text="Psíquico" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88A890F0" BorderBrush="#A890F0">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/volador.png" Width="24" Height="24"/>
+                        <TextBlock Text="Volador" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88A8A878" BorderBrush="#A8A878">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/normal.png" Width="24" Height="24"/>
+                        <TextBlock Text="Normal" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88C03028" BorderBrush="#C03028">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/lucha.png" Width="24" Height="24"/>
+                        <TextBlock Text="Lucha" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88A040A0" BorderBrush="#A040A0">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/veneno.png" Width="24" Height="24"/>
+                        <TextBlock Text="Veneno" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88E0C068" BorderBrush="#E0C068">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/tierra.png" Width="24" Height="24"/>
+                        <TextBlock Text="Tierra" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88B8A038" BorderBrush="#B8A038">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/roca.png" Width="24" Height="24"/>
+                        <TextBlock Text="Roca" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88A8B820" BorderBrush="#A8B820">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/bicho.png" Width="24" Height="24"/>
+                        <TextBlock Text="Bicho" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88705898" BorderBrush="#705898">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/fantasma.png" Width="24" Height="24"/>
+                        <TextBlock Text="Fantasma" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#8898D8D8" BorderBrush="#98D8D8">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/hielo.png" Width="24" Height="24"/>
+                        <TextBlock Text="Hielo" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#887038F8" BorderBrush="#7038F8">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/dragon.png" Width="24" Height="24"/>
+                        <TextBlock Text="Dragón" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88705848" BorderBrush="#705848">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/siniestro.png" Width="24" Height="24"/>
+                        <TextBlock Text="Siniestro" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88B8B8D0" BorderBrush="#B8B8D0">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/acero.png" Width="24" Height="24"/>
+                        <TextBlock Text="Acero" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88EE99AC" BorderBrush="#EE99AC">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/hada.png" Width="24" Height="24"/>
+                        <TextBlock Text="Hada" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource NoGrayButtonStyle}" Click="TypeFilter_Click" Background="#88F8D030" BorderBrush="#F8D030">
+                    <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+                        <Image Source="Assets/electrico.png" Width="24" Height="24"/>
+                        <TextBlock Text="Eléctrico" Foreground="White" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+
+            </ItemsControl>
+        </ScrollViewer>
+        
+
+        <!-- Pokemon List -->
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <GridView x:Name="PokemonList"
+                      SelectionMode="None"
+                      IsItemClickEnabled="True"
+                      ItemClick="PokemonList_ItemClick"
+                      HorizontalAlignment="Left">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid x:Name="TypeWrapGrid" Orientation="Horizontal" ItemWidth="200" ItemHeight="200"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="10" Width="180" Height="180" Background="White" CornerRadius="12" BorderBrush="LightGray" BorderThickness="1">
+                            <Grid>
+                                <Image Source="{Binding Imagen}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Border x:Name="HoverOverlay" Background="#22000000" Opacity="0"/>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup>
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="HoverOverlay"
+                                                                 Storyboard.TargetProperty="Opacity"
+                                                                 To="1"
+                                                                 Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </ScrollViewer>
+    </Grid>
+</Page>

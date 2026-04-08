@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="ProyectoVacioUWP_Base.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoVacioUWP_Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+ 
+        <Grid>
+        <NavigationView x:Name="NavView" 
+              PaneDisplayMode="Left" 
+              IsBackButtonVisible="Collapsed"
+              IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+            <NavigationViewItem Icon="Home" Content="Inicio" Tapped="NavViewItem_Tapped" Tag="Inicio"/>
+
+            <NavigationViewItem Icon="Library" Content="Pokedex" Tapped="NavViewItem_Tapped" Tag="Pokedex"/>
+
+            <NavigationViewItem Icon="AllApps" Content="Combate" Tapped="NavViewItem_Tapped" Tag="Combate"/>
+
+            <NavigationViewItem Icon="Help" Content="Acerca De" Tapped="NavViewItem_Tapped" Tag="AcercaDe"/>
+        </NavigationView.MenuItems>
+
+        <Frame x:Name="frCentral">
+        </Frame>
+    </NavigationView>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <!-- NARROW -->
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="NavView.PaneDisplayMode" Value="LeftCompact"/>
+                        <Setter Target="NavView.IsPaneOpen" Value="False"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- WIDE -->
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="NavView.PaneDisplayMode" Value="Left"/>
+                        <Setter Target="NavView.IsPaneOpen" Value="True"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>
